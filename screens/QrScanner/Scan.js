@@ -11,10 +11,11 @@ import QRCodeScanner from 'react-native-qrcode-scanner';
 import GenerateButton from '../../component/GenerateButton';
 export default class QrScanner extends React.Component {
   ifScanned = (e) => {
-    Linking.openURL(e.data).catch((err) =>
-      // Alert.alert(e.data),
-      navigation.navigate('ShowText', {data}),
-    );
+    // Linking.openURL(e.data).catch((err) =>
+    // Alert.alert(e.data),
+    let data = e.data;
+    this.props.navigation.navigate('ShowText', {data});
+    // );
   };
   render() {
     return (
@@ -28,7 +29,7 @@ export default class QrScanner extends React.Component {
           reactivateTimeout={10}
           showMarker={true}
           markerStyle={{borderColor: '#FFDE59', borderRadius: 10}}
-          cameraProps={{ratio: '1:1'}}
+          cameraProps={{ratio: '4:3'}}
           // bottomContent={}
         />
         <TouchableOpacity
@@ -42,7 +43,7 @@ export default class QrScanner extends React.Component {
 }
 const styles = StyleSheet.create({
   button: {
-    margin: '5%',
+    marginBottom: '20%',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
@@ -52,14 +53,14 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#000',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
   },
   header: {
     color: '#E9EAEE',
     fontSize: 30,
     fontFamily: 'Roboto',
     fontWeight: '700',
-    margin: 20,
+    marginTop: '10%',
   },
   scanner: {
     backgroundColor: '#000',

@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
     height: '100%',
     width: '100%',
     borderRadius: 50,
+    color: '#fff',
   },
   container2: {
     flex: 30,

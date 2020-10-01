@@ -6,8 +6,9 @@ import Home from './screens/Home';
 import QrHome from './screens/QrScanner/QrHome';
 import Scan from './screens/QrScanner/Scan';
 import GetText from './screens/QrScanner/GetText';
-// import ShowQR from './screens/QrScanner/ShowQR';
+import ShowQR from './screens/QrScanner/ShowQR';
 import ShowText from './screens/QrScanner/ShowText';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export default class App extends Component {
   render() {
@@ -20,7 +21,7 @@ export default class App extends Component {
           <stack.Screen name="QR" component={QrHome} />
           <stack.Screen name="Scan" component={Scan} />
           <stack.Screen name="GetText" component={GetText} />
-          {/* <stack.Screen name="ShowQR" component={ShowQR} /> */}
+          <stack.Screen name="ShowQR" component={ShowQR} />
           <stack.Screen name="ShowText" component={ShowText} />
           {/*
           <stack.Screen

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, StyleSheet, TouchableOpacity} from 'react-native';
 import GenerateButton from '../../component/GenerateButton';
-import QRCode from 'react-native-qrcode-svg';
+import QRCode from 'react-native-qrcode-generator';
 export default class ShowQR extends Component {
   render() {
     const {data} = this.props.route.params;
@@ -14,7 +14,7 @@ export default class ShowQR extends Component {
             justifyContent: 'center',
             alignItems: 'center',
           }}>
-          <QRCode
+          {/* <QRCode
             size={310}
             backgroundColor="#000"
             color="#FFDE59"
@@ -22,9 +22,10 @@ export default class ShowQR extends Component {
             // logo={logo}
             logoSize={80}
             logoBorderRadius={40}
-          />
+          /> */}
+          <QRCode value={data} size={310} bgColor="black" fgColor="#FFDE59" />
         </View>
-        <View
+        {/* <View
           style={{
             flex: 1,
             alignItems: 'flex-end',
@@ -32,7 +33,7 @@ export default class ShowQR extends Component {
           <TouchableOpacity style={styles.save}>
             <GenerateButton Text="Save" />
           </TouchableOpacity>
-        </View>
+        </View> */}
       </View>
     );
   }
